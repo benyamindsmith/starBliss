@@ -6,23 +6,6 @@ As is the case with all projects. This one is a work in progress. So this reposi
 
 <details>
 <summary>
-<h2>Table of Contents</h2>
-</summary>
-
-* [Installing this package](https://github.com/benyamindsmith/starBliss/main/README.md#installing-this-package)
-
-* [Why this isn't included in `mapBliss`](https://github.com/benyamindsmith/starBliss/main/README.md#why-this-isnt-included-in-mapbliss)
-
-* [Basic Usage](https://github.com/benyamindsmith/starBliss/main/README.md#basic-usage)
-
-* [Dependencies](https://github.com/benyamindsmith/starBliss/main/README.md#dependencies)
-
-* [Sample Visuals](https://github.com/benyamindsmith/starBliss/main/README.md#sample-visuals)
-
-</details>
-
-<details>
-<summary>
 <h3>Installing this package</h3>
 </summary>
 ```
