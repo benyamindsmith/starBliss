@@ -8,10 +8,12 @@ As is the case with all projects. This one is a work in progress. So this reposi
 <summary>
 <h3>Installing this package</h3>
 </summary>
-```
+
+```r
 # install.packages("devtools")
 devtools::install_github("benyamindsmith/starBliss")
 ```
+
 </details>
 
 <details>
