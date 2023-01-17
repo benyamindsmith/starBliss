@@ -20,7 +20,9 @@ devtools::install_github("benyamindsmith/starBliss")
 <summary>
 <h3>Why this isn't included in `mapBliss`</h3>
 </summary>
+
 The `mapBliss` package utlizes leafleat and creates dynamic maps which can be screenshot to make custom maps. For visualization `starBliss` uses `ggplot2` creates static visuals which can be saved by using the `ggsave`. Since the approaches to making visuals were so different, I thought it was best make keep `mapBliss` and `starBliss` seperate in their construction.
+
 </details>
 
 
