@@ -19,19 +19,25 @@
 #' @export
 #' @examples
 #'
-#' plot_starmap(location= "Toronto, ON, Canada",
-#'              date="2022-01-17",
-#'              style="black",
-#'              line1_text="Toronto",
-#'              line2_text ="January 17th, 2023",
-#'              line3_text="43.6532° N, 79.3832° W")
+#' library(starBliss)
+#' library(ggplot2)
+#' p<- plot_starmap(location= "Toronto, ON, Canada",
+#'                  date="2022-01-17",
+#'                  style="black",
+#'                  line1_text="Toronto",
+#'                  line2_text ="January 17th, 2023",
+#'                  line3_text="43.6532° N, 79.3832° W")
 #'
-#'plot_starmap(location= "Toronto, ON, Canada",
-#'              date="2022-01-17",
-#'              style="green",
-#'              line1_text="Toronto",
-#'              line2_text ="January 17th, 2023",
-#'              line3_text="43.6532° N, 79.3832° W")
+#' ggsave('toronto_black.png', plot = p, width = unit(10, 'in'), height = unit(15, 'in'))
+#'
+#' p<- plot_starmap(location= "Toronto, ON, Canada",
+#'                  date="2022-01-17",
+#'                  style="green",
+#'                  line1_text="Toronto",
+#'                  line2_text ="January 17th, 2023",
+#'                  line3_text="43.6532° N, 79.3832° W")
+#'
+#' ggsave('toronto_green.png', plot = p, width = unit(10, 'in'), height = unit(15, 'in'))
 
 
 
