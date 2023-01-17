@@ -98,3 +98,9 @@ ggsave('toronto_green.png', plot = p, width = unit(10, 'in'),
 ![](https://raw.githubusercontent.com/benyamindsmith/starBliss/main/toronto_green.png)
 </details>
 </details>
+
+<details>
+<summary>
+<h3>Acknowledgements</h3>
+</summary>
+</details>
