@@ -76,14 +76,39 @@ This package has the following dependencies:
 </summary>
 
 ```r
+library(ggplot2)
 library(starBliss)
-plot_starmap(location= "Toronto, ON, Canada",
-              date="2022-01-17",
-              style="black",
-              line1_text="Toronto",
-              line2_text ="January 17th, 2023",
-              line3_text="43.6532° N, 79.3832° W")
+p<- plot_starmap(location= "Toronto, ON, Canada",
+             date="2022-01-17",
+             style="black",
+             line1_text="Toronto",
+             line2_text ="January 17th, 2023",
+             line3_text="43.6532° N, 79.3832° W")
+ggsave('toronto_black.png', plot = p, width = unit(10, 'in'), 
+       height = unit(15, 'in'))
 ```
 
+![](https://raw.githubusercontent.com/benyamindsmith/starBliss/main/toronto_black.png)
+</details>
+
+<details>
+<summary>
+"Green" Style
+</summary>
+
+```r
+library(ggplot2)
+library(starBliss)
+p<- plot_starmap(location= "Toronto, ON, Canada",
+             date="2022-01-17",
+             style="green",
+             line1_text="Toronto",
+             line2_text ="January 17th, 2023",
+             line3_text="43.6532° N, 79.3832° W")
+ggsave('toronto_green.png', plot = p, width = unit(10, 'in'), 
+       height = unit(15, 'in'))
+```
+
+![](https://raw.githubusercontent.com/benyamindsmith/starBliss/main/toronto_green.png)
 </details>
 </details>
