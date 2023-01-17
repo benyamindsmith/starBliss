@@ -25,7 +25,10 @@ As is the case with all projects. This one is a work in progress. So this reposi
 <summary>
 <h3>Installing this package</h3>
 </summary>
-(In progress)
+```
+# install.packages("devtools")
+devtools::install_github("benyamindsmith/starBliss")
+```
 </details>
 
 <details>
@@ -48,7 +51,17 @@ As is the case with all projects. This one is a work in progress. So this reposi
 <summary>
 <h3>Dependencies</h3>
 </summary>
-(In progress)
+This package has the following dependencies:
+ 
+ (In no particular order)
+    * `dplyr`
+    * `ggplot2`
+    * `magrittr`
+    * `tidygeocoder`
+    * `sf`
+    * `lubridate`
+    * `tibble`
+    * `grid`
 </details>
 
 
@@ -56,5 +69,21 @@ As is the case with all projects. This one is a work in progress. So this reposi
 <summary>
 <h3>Sample Visuals</h3>
 </summary>
-(In progress)
+
+<details>
+<summary>
+"Black" Style
+</summary>
+
+```r
+library(starBliss)
+plot_starmap(location= "Toronto, ON, Canada",
+              date="2022-01-17",
+              style="black",
+              line1_text="Toronto",
+              line2_text ="January 17th, 2023",
+              line3_text="43.6532° N, 79.3832° W")
+```
+
+</details>
 </details>
