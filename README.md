@@ -33,14 +33,23 @@ Since the approaches to making visuals were so different, I thought it was best 
 This package has the following dependencies:
  
  (In no particular order)
-    * `dplyr`
-    * `ggplot2`
-    * `magrittr`
-    * `tidygeocoder`
-    * `sf`
-    * `lubridate`
-    * `tibble`
-    * `grid`
+ 
+ * `dplyr`
+ 
+ * `ggplot2` 
+ 
+ * `magrittr`
+ 
+ * `tidygeocoder`
+ 
+ * `sf`
+ 
+ * `lubridate`
+ 
+ * `tibble`
+ 
+ * `grid`
+ 
 </details>
 
 
