@@ -43,14 +43,6 @@ Since the approaches to making visuals were so different, I thought it was best 
 
 <details>
 <summary>
-<h3>Basic Usage</h3>
-</summary>
-(In progress)
-</details>
-
-
-<details>
-<summary>
 <h3>Dependencies</h3>
 </summary>
 This package has the following dependencies:
@@ -69,7 +61,7 @@ This package has the following dependencies:
 
 <details>
 <summary>
-<h3>Sample Visuals</h3>
+<h3>Basic Usage/Sample Visuals</h3>
 </summary>
 
 <details>
