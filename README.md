@@ -105,5 +105,9 @@ ggsave('toronto_green.png', plot = p, width = unit(10, 'in'),
 <summary>
 <h3>Acknowledgements</h3>
 </summary>
-(In progress)
+This package is largely based on the heavy lifting done by other talented developers. Among them including: 
+
+* [Kim Fitter](https://github.com/kimnewzealand) for her [Celestial Maps in R](https://kimnewzealand.github.io/2019/02/21/celestial-maps/) blog.
+
+* [Allan Cameron](https://stackoverflow.com/users/12500315/allan-cameron) for essentially [supplying the code](https://stackoverflow.com/questions/75064069/creating-star-map-visualizations-based-on-location-and-date/75064359#75064359) for this to happen.
 </details>
