@@ -44,8 +44,8 @@
 plot_starmap <- function(location,
                          date = today(),
                          style="black",
-                         line1_text="",
-                         line2_text="",
+                         line1_text = location,
+                         line2_text = format(date, "%B %d, %Y"),
                          line3_text=""){
 
   # Suppress warnings within the function
@@ -72,17 +72,8 @@ plot_starmap <- function(location,
         geocode(address=singlelineaddress,method = 'arcgis') %>% .[["lat"]] %>% round(4)
     )
   )
-  # Logitude is dependent on date
-  # If the date is less than October 18th of that year...
-  if(dt < ydm(paste(year(dt),"18-10",sep="-"))){
-    # Work with October 18th of Previous Year
-    ref_date <- ydm(paste(year(dt)-1,"18-10",sep="-"))
-  } else{
-    # Work with October 18 of this year
-    ref_date<- ydm(paste(year(dt),"18-10",sep="-"))
 
-  }
-
+  ref_date <- paste0(year(dt),"01","01",sep="-") %>% ydm()
   # Resulting longitude
   lon <- (-as.numeric(difftime(ref_date,dt, units="days"))/365)*360 %>% round(4)
 

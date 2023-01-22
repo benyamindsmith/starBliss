@@ -8,8 +8,8 @@ plot_starmap(
   location,
   date = today(),
   style = "black",
-  line1_text = "",
-  line2_text = "",
+  line1_text = location,
+  line2_text = format(date, "\%B \%d, \%Y"),
   line3_text = ""
 )
 }
