@@ -43,13 +43,14 @@
 
 plot_starmap <- function(location,
                          date = today(),
-                         style="black",
+                         style = c('black', 'green'),
                          line1_text = location,
                          line2_text = format(date, "%B %d, %Y"),
                          line3_text=""){
 
+  # Using match.arg to avoid spelling errors with the argument specification
+  style <- match.arg(style)
   # Suppress warnings within the function
-
   defaultW <- getOption("warn")
   options(warn = -1)
 
