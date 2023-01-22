@@ -9,7 +9,7 @@ plot_starmap(
   date = today(),
   style = c("black", "green"),
   line1_text = location,
-  line2_text = format(date, "\%B \%d, \%Y"),
+  line2_text = format(as.Date(date), "\%B \%d, \%Y"),
   line3_text = ""
 )
 }

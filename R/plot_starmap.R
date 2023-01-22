@@ -45,11 +45,13 @@ plot_starmap <- function(location,
                          date = today(),
                          style = c('black', 'green'),
                          line1_text = location,
-                         line2_text = format(date, "%B %d, %Y"),
+                         line2_text = format(as.Date(date), "%B %d, %Y"),
                          line3_text=""){
 
   # Using match.arg to avoid spelling errors with the argument specification
   style <- match.arg(style)
+  # Cleaning up date arg
+  date<- as.Date(date)
   # Suppress warnings within the function
   defaultW <- getOption("warn")
   options(warn = -1)
@@ -94,7 +96,7 @@ plot_starmap <- function(location,
   invisible(
     capture.output(
       constellation_lines_sf <- invisible(st_read(url1, stringsAsFactors = FALSE)) %>%
-        st_wrap_dateline(options = c("WRAPDATELINE=YES", "DATELINEOFFSET=180")) %>%
+        st_wrap_dateline(options = c("WRAPDATELINE=YES", "DATELINEOFFSET=360")) %>%
         st_transform(crs = projString) %>%
         st_intersection(hemisphere) %>%
         filter(!is.na(st_is_valid(.))) %>%
