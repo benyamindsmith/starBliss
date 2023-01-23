@@ -109,5 +109,9 @@ This package is largely based on the heavy lifting done by other talented develo
 
 * [Kim Fitter](https://github.com/kimnewzealand) for her [Celestial Maps in R](https://kimnewzealand.github.io/2019/02/21/celestial-maps/) blog.
 
-* [Allan Cameron](https://stackoverflow.com/users/12500315/allan-cameron) for essentially [supplying the code](https://stackoverflow.com/questions/75064069/creating-star-map-visualizations-based-on-location-and-date/75064359#75064359) for this to happen.
+* [Allan Cameron](https://stackoverflow.com/users/12500315/allan-cameron) for [supplying the code](https://stackoverflow.com/questions/75064069/creating-star-map-visualizations-based-on-location-and-date/75064359#75064359) which got this started.
+
+*[Bernardo Lares](https://github.com/laresbernardo) for opening up issues!
+
+*[Diego Hernangómez](https://github.com/dieghernan) for helping with the [constellation lines problem](https://stackoverflow.com/questions/75205747/how-to-remove-random-diagonal-lines-from-star-map-vizualizations-produced-by-geo/75212722#75212722).
 </details>
