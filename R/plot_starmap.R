@@ -88,7 +88,12 @@ plot_starmap <- function(location,
   # Data Transformation
   flip <- matrix(c(-1, 0, 0, 1), 2, 2)
 
-  hemisphere <- st_sfc(st_point(c(lon, lat)), crs = 4326) %>%
+  hemisphere_1 <- s2::s2_buffer_cells(
+    s2::as_s2_geography(paste0("POINT(", lon, " ", lat, ")")),
+    distance = 1e7,
+    max_cells = 5000)
+
+  hemisphere_2 <- st_sfc(st_point(c(lon, lat)), crs = 4326) %>%
     st_buffer(dist = 1e7) %>%
     st_transform(crs = projString)
 
@@ -97,10 +102,16 @@ plot_starmap <- function(location,
     capture.output(
       constellation_lines_sf <- invisible(st_read(url1, stringsAsFactors = FALSE)) %>%
         st_wrap_dateline(options = c("WRAPDATELINE=YES", "DATELINEOFFSET=360")) %>%
+        # Use s2 for the cut
+        st_as_s2() %>%
+        s2::s2_intersection(hemisphere_1) %>%
+        # Back to sf
+        st_as_sf() %>%
         st_transform(crs = projString) %>%
-        st_intersection(hemisphere) %>%
         filter(!is.na(st_is_valid(.))) %>%
-        mutate(geometry = geometry * flip)
+        mutate(geometry = geometry * flip) %>%
+        # Filter if empty, since the cut can produce empty geometries
+        filter(!st_is_empty(.))
     )
   )
 
@@ -112,7 +123,7 @@ plot_starmap <- function(location,
     capture.output(
       stars_sf <- st_read(url2,stringsAsFactors = FALSE) %>%
         st_transform(crs = projString) %>%
-        st_intersection(hemisphere) %>%
+        st_intersection(hemisphere_2) %>%
         mutate(geometry = geometry * flip)
     )
   )

@@ -16,5 +16,6 @@ Imports:
         sf,
         lubridate,
         tibble,
-        grid
+        grid,
+        s2
 RoxygenNote: 7.2.2
