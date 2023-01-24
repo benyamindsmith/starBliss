@@ -16,6 +16,8 @@
 #' @import tidygeocoder
 #' @import tibble
 #' @import grid
+#' @import s2
+#' @import withr
 #' @export
 #' @examples
 #'
@@ -53,8 +55,6 @@ plot_starmap <- function(location,
   # Cleaning up date arg
   date<- as.Date(date)
   # Suppress warnings within the function
-  defaultW <- getOption("warn")
-  options(warn = -1)
 
   # Constellations Data
   url1 <- "https://raw.githubusercontent.com/benyamindsmith/starBliss/main/data/constellations.lines.json"
@@ -127,6 +127,7 @@ plot_starmap <- function(location,
   st_crs(constellation_lines_sf) <- projString
 
   # Reading Data
+  withr::with_options(list(warn=-1),
   invisible(
     capture.output(
       stars_sf <- st_read(url2,stringsAsFactors = FALSE) %>%
@@ -135,7 +136,7 @@ plot_starmap <- function(location,
         mutate(geometry = geometry * flip)
     )
   )
-
+)
   st_crs(stars_sf) <- projString
 
 
@@ -184,7 +185,6 @@ plot_starmap <- function(location,
                                       margin = margin(150, 20, 20, 20),
           ))
 
-  # Turn Warnings Back on
-  options(warn = defaultW)
+
   return(p)
 }
