@@ -49,6 +49,8 @@ This package has the following dependencies:
  * `tibble`
  
  * `grid`
+
+ * `s2`
  
 </details>
 
