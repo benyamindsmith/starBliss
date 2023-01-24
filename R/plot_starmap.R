@@ -7,7 +7,7 @@
 #' @param style choice. Right now only accepts "black and green
 #' @param line1_text Text you want to have in your image caption. There are 3 centered lines specified.
 #' @param line2_text Ibid.
-#' @param line3_text Ibid.
+#' @param line3_text If `TRUE` default value is the geocoordinates (GPS form) otherwise you can add the text of your choosing.
 #' @import magrittr
 #' @import dplyr
 #' @import lubridate
@@ -46,7 +46,7 @@ plot_starmap <- function(location,
                          style = c('black', 'green'),
                          line1_text = location,
                          line2_text = format(as.Date(date), "%B %d, %Y"),
-                         line3_text=""){
+                         line3_text=TRUE){
 
   # Using match.arg to avoid spelling errors with the argument specification
   style <- match.arg(style)
@@ -71,11 +71,19 @@ plot_starmap <- function(location,
   # Latitude is dependent on location
   suppressMessages(
     capture.output(
-      lat <- tibble(singlelineaddress = location) %>%
-        geocode(address=singlelineaddress,method = 'arcgis') %>% .[["lat"]] %>% round(4)
+      gocodeData <-  tibble(singlelineaddress = location) %>%
+                     geocode(address=singlelineaddress,method = 'arcgis')
     )
   )
 
+  lat <- gocodeData %>% .[["lat"]]
+  lon_map <-gocodeData %>%  .[["long"]]
+
+  if(line3_text==TRUE){
+    line3_text <- paste0(abs(round(lat,4)), "° ", ifelse(lat > 0, "N", "S"), ", ",
+                         abs(round(lon_map,4)), "° ", ifelse(lon_map > 0, "E", "W")
+    )
+  }
   ref_date <- paste0(year(dt),"01","01",sep="-") %>% ydm()
   # Resulting longitude
   lon <- (-as.numeric(difftime(ref_date,dt, units="days"))/365)*360 %>% round(4)

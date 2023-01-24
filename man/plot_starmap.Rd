@@ -10,7 +10,7 @@ plot_starmap(
   style = c("black", "green"),
   line1_text = location,
   line2_text = format(as.Date(date), "\%B \%d, \%Y"),
-  line3_text = ""
+  line3_text = TRUE
 )
 }
 \arguments{
@@ -24,7 +24,7 @@ plot_starmap(
 
 \item{line2_text}{Ibid.}
 
-\item{line3_text}{Ibid.}
+\item{line3_text}{If `TRUE` default value is the geocoordinates (GPS form) otherwise you can add the text of your choosing.}
 }
 \description{
 Create a custom, print quality star map with `plot_starmap()`
