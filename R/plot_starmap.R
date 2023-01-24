@@ -54,19 +54,12 @@ plot_starmap <- function(location,
   style <- match.arg(style)
   # Cleaning up date arg
   date<- as.Date(date)
-  # Suppress warnings within the function
-
-  # Constellations Data
-  url1 <- "https://raw.githubusercontent.com/benyamindsmith/starBliss/main/data/constellations.lines.json"
-
-  # Stars Data
-  url2 <- "https://raw.githubusercontent.com/benyamindsmith/starBliss/main/data/stars.6.json"
 
   # Formatted date
   dt<- lubridate::ymd(date)
 
 
-  # Extract relevant latitude and logitude.
+  # Extract relevant latitude and longitude.
 
   # Latitude is dependent on location
   suppressMessages(
@@ -77,6 +70,7 @@ plot_starmap <- function(location,
   )
 
   lat <- gocodeData %>% .[["lat"]]
+  # longitude for line3_text
   lon_map <-gocodeData %>%  .[["long"]]
 
   if(line3_text==TRUE){
@@ -108,7 +102,7 @@ plot_starmap <- function(location,
   # Reading Data
   invisible(
     capture.output(
-      constellation_lines_sf <- invisible(st_read(url1, stringsAsFactors = FALSE)) %>%
+      constellation_lines_sf <- invisible(st_read('data/constellations.lines.json', stringsAsFactors = FALSE)) %>%
         st_wrap_dateline(options = c("WRAPDATELINE=YES", "DATELINEOFFSET=360")) %>%
         # Use s2 for the cut
         st_as_s2() %>%
@@ -130,7 +124,7 @@ plot_starmap <- function(location,
   withr::with_options(list(warn=-1),
   invisible(
     capture.output(
-      stars_sf <- st_read(url2,stringsAsFactors = FALSE) %>%
+      stars_sf <- st_read('data/stars.6.json',stringsAsFactors = FALSE) %>%
         st_transform(crs = projString) %>%
         st_intersection(hemisphere_2) %>%
         mutate(geometry = geometry * flip)
