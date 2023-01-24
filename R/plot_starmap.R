@@ -102,7 +102,7 @@ plot_starmap <- function(location,
   # Reading Data
   invisible(
     capture.output(
-      constellation_lines_sf <- invisible(st_read('data/constellations.lines.json', stringsAsFactors = FALSE)) %>%
+      constellation_lines_sf <- invisible(st_read(system.file("data", "constellations.lines.json", package = "starBliss"), stringsAsFactors = FALSE)) %>%
         st_wrap_dateline(options = c("WRAPDATELINE=YES", "DATELINEOFFSET=360")) %>%
         # Use s2 for the cut
         st_as_s2() %>%
@@ -124,7 +124,7 @@ plot_starmap <- function(location,
   withr::with_options(list(warn=-1),
   invisible(
     capture.output(
-      stars_sf <- st_read('data/stars.6.json',stringsAsFactors = FALSE) %>%
+      stars_sf <- st_read(system.file("data", "stars.6.json", package = "starBliss"),stringsAsFactors = FALSE) %>%
         st_transform(crs = projString) %>%
         st_intersection(hemisphere_2) %>%
         mutate(geometry = geometry * flip)
