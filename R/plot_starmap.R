@@ -75,7 +75,7 @@ plot_starmap <- function(location,
 
   if(line3_text==TRUE){
     line3_text <- paste0(abs(round(lat,4)), "° ", ifelse(lat > 0, "N", "S"), ", ",
-                         abs(round(lon_map,4)), "° ", ifelse(lon_map > 0, "E", "W")
+                         abs(round(lon_map,3)), "° ", ifelse(lon_map > 0, "E", "W")
     )
   }
   ref_date <- paste0(year(dt),"01","01",sep="-") %>% ydm()
