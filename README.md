@@ -115,5 +115,5 @@ This package is largely based on the heavy lifting done by other talented develo
 
 * [Bernardo Lares](https://github.com/laresbernardo) for opening up issues!
 
-* [Diego Hernangómez](https://github.com/dieghernan) for helping with the [constellation lines problem](https://stackoverflow.com/questions/75205747/how-to-remove-random-diagonal-lines-from-star-map-vizualizations-produced-by-geo/75212722#75212722).
+* [Diego Hernangómez](https://github.com/dieghernan) for helping with the [constellation lines problem](https://stackoverflow.com/questions/75205747/how-to-remove-random-diagonal-lines-from-star-map-vizualizations-produced-by-geo/75212722#75212722) and for helping with making a [rotation function](https://github.com/benyamindsmith/starBliss/pull/10) which accurately matches MapsForMoments.
 </details>
