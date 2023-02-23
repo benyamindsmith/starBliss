@@ -58,6 +58,8 @@ plot_starmap <- function(location,
   # Formatted date
   dt<- lubridate::ymd(date)
 
+  # Force hour and timezone as MapsForMoments does
+  dt_tm <- lubridate::as_datetime(paste(dt, " 22:00:00"), tz = "UTC")
 
   # Extract relevant latitude and longitude.
 
@@ -80,7 +82,7 @@ plot_starmap <- function(location,
   }
   ref_date <- paste0(year(dt),"01","01",sep="-") %>% ydm()
   # Resulting longitude
-  lon <- (-as.numeric(difftime(ref_date,dt, units="days"))/365)*360 %>% round(4)
+  lon <- get_mst(dt_tm, lon_map) %>% round(4)
 
   # The CRS
 
