@@ -105,7 +105,16 @@ ggsave('toronto_green.png', plot = p, width = unit(10, 'in'),
 
 <details>
 <summary>
+<h3>Using the Web App</h3>
+</summary>
+
+If using the R console is not something you're interested in doing. I created a [Shiny App](https://github.com/benyamindsmith/starBlissGUI) that you can check out and use. Check out the [hosted version](https://benyamindsmith.shinyapps.io/starBlissGUI/) on shinyapps.io 
+</details>
+
+<details>
+<summary>
 <h3>Acknowledgements</h3>
+
 </summary>
 This package is largely based on the heavy lifting done by other talented developers. Among them including: 
 
@@ -117,3 +126,4 @@ This package is largely based on the heavy lifting done by other talented develo
 
 * [Diego Hernangómez](https://github.com/dieghernan) for helping with the [constellation lines problem](https://stackoverflow.com/questions/75205747/how-to-remove-random-diagonal-lines-from-star-map-vizualizations-produced-by-geo/75212722#75212722) and for helping with making a [rotation function](https://github.com/benyamindsmith/starBliss/pull/10) which accurately matches MapsForMoments.
 </details>
+
